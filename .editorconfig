@@ -1,0 +1,17 @@
+; top-most EditorConfig file
+root = true
+
+; Unix-style newlines
+[*]
+end_of_line = LF
+charset = utf-8
+
+; Keeping files tidy
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+; Default indenting options
+indent_style = tab
+
+[*.{md,rst}]
+trim_trailing_whitespace = false
