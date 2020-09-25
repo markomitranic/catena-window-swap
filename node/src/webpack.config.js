@@ -70,5 +70,9 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: '[name].css',
 		})
-	]
+	],
+	watchOptions: {
+		aggregateTimeout: 300,
+		poll: 1000
+	},
 };
