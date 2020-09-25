@@ -4,9 +4,8 @@ ENV NODE_ENV=development
 WORKDIR /app/src/
 
 FROM base AS dev
-ENTRYPOINT []
-CMD ["tail", "-f", "/dev/null"]
 COPY build_dev.sh /app/build.sh
+ENTRYPOINT ["/app/build.sh"]
 
 FROM base AS prod
 COPY ./src/ /app/src/
