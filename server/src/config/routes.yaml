@@ -1,3 +1,7 @@
-index:
-    path: /api/
+video.random:
+    path: /api/video/random
     controller: App\Controller\RandomVideo::index
+
+video.submit:
+    path: /api/video/submit
+    controller: App\Controller\SubmitVideo::index

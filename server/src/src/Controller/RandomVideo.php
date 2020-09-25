@@ -3,15 +3,17 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Repository\VideoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class RandomVideo extends AbstractController
 {
 
-	public function index()
+	public function index(VideoRepository $videoRepository): JsonResponse
 	{
-		return new Response('test');
+		$videos = $videoRepository->findAll();
+		return new JsonResponse($videos[array_rand($videos)]);
 	}
 
 }
