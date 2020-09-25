@@ -17,6 +17,17 @@ services:
       - node_build:/app/src/build
       - node_vendors:/app/src/node_modules
 
+  server:
+    build:
+      context: ./server
+      target: dev
+      args:
+        - XDEBUG_ACTIVE=${XDEBUG_ACTIVE}
+    volumes:
+      - ./server/src:/app/src:delegated
+      - server_vendor:/app/src/vendor
+
 volumes:
   node_vendors:
   node_build:
+  server_vendor:

@@ -12,7 +12,47 @@ services:
     networks:
       - windowswap
 
+  server:
+    container_name: windowswap_server
+    build:
+      context: ./server
+      target: prod
+    environment:
+      MYSQL_HOST: 'windowswap_mysql'
+      MYSQL_USERNAME: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    restart: always
+    depends_on:
+      - mysql
+    networks:
+      - windowswap
+
+  mysql:
+    container_name: windowswap_mysql
+    image: mariadb:latest
+    restart: always
+    volumes:
+      - mysql_datastore:/var/lib/mysql
+    ports:
+      - ${MYSQL_PORT}:3306
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "--host=127.0.0.1", "--user=${MYSQL_USERNAME}", "--password=${MYSQL_PASSWORD}", "--silent"]
+      interval: 10s
+      timeout: 10s
+      start_period: 30s
+    networks:
+      - windowswap
+
 networks:
   windowswap:
     name: windowswap
     driver: bridge
+
+volumes:
+  mysql_datastore:
