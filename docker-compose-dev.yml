@@ -3,9 +3,13 @@ version: "3.7"
 services:
 
   gateway:
+    build:
+      target: dev
     volumes:
       - ./node/src/public:/app/src/public:delegated
       - node_build:/app/src/public/build
+    depends_on:
+      - node
 
   node:
     container_name: windowswap_node
@@ -16,6 +20,8 @@ services:
       - ./node/src:/app/src:delegated
       - node_build:/app/src/build
       - node_vendors:/app/src/node_modules
+    networks:
+      - windowswap
 
   server:
     build:

@@ -63,6 +63,19 @@ module.exports = {
 			}),
 		],
 	},
+	watchOptions: {
+		aggregateTimeout: 300,
+		poll: 1000
+	},
+	devServer: {
+		inline: true,
+		historyApiFallback: true,
+		host: 'localhost',
+		disableHostCheck: true,
+		publicPath: '/build/',
+		contentBase: '/app/src/public',
+		compress: true
+	},
 	stats: 'errors-only',
 	plugins: [
 		new CleanWebpackPlugin({watch: true}),
