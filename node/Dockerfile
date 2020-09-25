@@ -5,7 +5,7 @@ WORKDIR /app/src/
 
 FROM base AS dev
 COPY build_dev.sh /app/build.sh
-ENTRYPOINT ["/app/build.sh"]
+ENTRYPOINT ["bash", "/app/build.sh"]
 CMD ["tail", "-f", "/dev/null"]
 
 FROM base AS prod
