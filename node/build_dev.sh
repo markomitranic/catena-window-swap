@@ -4,6 +4,7 @@ set -e
 
 yarn install
 yarn build
+echo "[Success] Asset build finished."
 
-echo "[Success|Ready] Asset build finished."
-tail -f /dev/null
+exec "$@"
+
