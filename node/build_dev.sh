@@ -7,4 +7,3 @@ yarn build
 echo "[Success] Asset build finished."
 
 exec "$@"
-
