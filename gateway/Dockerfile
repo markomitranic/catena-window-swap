@@ -10,3 +10,5 @@ COPY conf/default_dev.conf /etc/nginx/conf.d/default.conf
 FROM base AS prod
 COPY --from=windowswap_node /app/src/public /app/src/public
 COPY --from=windowswap_node /app/src/build /app/src/public/build
+
+COPY conf/ssl /etc/nginx/ssl

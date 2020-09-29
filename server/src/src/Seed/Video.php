@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Video;
+namespace App\Seed;
 
-use App\Entity\Video;
+use App\Entity\Video as VideoEntity;
 use Doctrine\ORM\EntityManagerInterface;
 use Faker\Factory;
 use Faker\Generator;
@@ -13,7 +13,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class SeedCommand extends Command
+class Video extends Command
 {
 
 	private const NAME = 'fixtures:populate';
@@ -34,7 +34,7 @@ class SeedCommand extends Command
 		$io->writeln('Generating random videos...');
 		for ($i=0; $i < 10; $i++) {
 			$this->em->persist(
-				(new Video())
+				(new VideoEntity())
 					->setYoutubeId($this->getYoutubeId())
 					->setName($this->faker->name)
 					->setLocation($this->faker->city)

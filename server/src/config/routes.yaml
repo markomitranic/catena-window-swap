@@ -3,7 +3,12 @@ video.random:
     controller: App\Controller\RandomVideo::index
     methods: ['GET']
 
-video.submit:
+video.submit.new:
     path: /api/video/submit
     controller: App\Controller\SubmitVideo::index
     methods: ['POST']
+
+video.submit.list:
+    path: /api/video/submit
+    controller: App\Controller\SubmissionList::index
+    methods: ['GET']

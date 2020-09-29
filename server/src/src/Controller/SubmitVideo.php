@@ -3,24 +3,33 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Submission\Request\Validator;
 use App\Submission\UploadService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class SubmitVideo extends AbstractController
 {
 
-	public function index(Request $request, UploadService $uploadService): JsonResponse
-	{
-		$filesBag = $request->files->all();
-		if (!array_key_exists('video', $filesBag)) {
-			throw new \Exception('No video attached', 400);
+	public function index(
+		Validator $validator,
+		UploadService $uploadService,
+		Request $request
+	): Response {
+		try {
+			$submissionDto = $validator->validate(
+				$request->get('name'),
+				$request->get('location'),
+				$request->files->get('video')
+			);
+		} catch (\Exception $e) {
+			return new JsonResponse(['success' => false, 'error' => $e->getMessage()], 400);
 		}
 
-		$uploadService->submit($filesBag['video'], $request->get('name'), $request->get('location'));
-
-		return new JsonResponse(true);
+		$uploadService->submit($submissionDto);
+		return new JsonResponse(['success' => true]);
 	}
 
 }
