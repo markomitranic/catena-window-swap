@@ -15,9 +15,9 @@ class RandomVideo extends AbstractController
 		$videos = $videoRepository->findAll();
 
 		if (empty($videos)) {
-			return new JsonResponse(['error'=> 'No videos in the Database.', 200]);
+			return new JsonResponse(['success' => false, 'error'=> 'No videos in the Database.']);
 		}
-		return new JsonResponse($videos[array_rand($videos)]);
+		return new JsonResponse(['success' => true, 'data' => $videos[array_rand($videos)]]);
 	}
 
 }
