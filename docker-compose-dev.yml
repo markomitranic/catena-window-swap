@@ -32,6 +32,7 @@ services:
     volumes:
       - ./server/src:/app/src:delegated
       - server_vendor:/app/src/vendor
+      - /app/src/var
 
 volumes:
   node_vendors:
