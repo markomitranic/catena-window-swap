@@ -70,7 +70,7 @@ class Validator
 			$video,
 			[
 				new File([
-					 'maxSize' => '1024M',
+					 'maxSize' => '2G',
 					 'mimeTypes' => self::ALLOWED_MIME_TYPES,
 					 'mimeTypesMessage' => 'Please upload a valid Video.',
 				 ]),
