@@ -29,3 +29,32 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\YouTube\Client:
+        arguments:
+            $clientId: '279992250827-fr8n93ag0b40kq06p119vc3k3qfq8rqt.apps.googleusercontent.com'
+            $clientSecret: '0kUtomIlHUC4wRfSepbA-Fs2'
+            $callbackUrl: 'http://localhost:8080/api/oauth/callback'
+
+    League\OAuth2\Client\Provider\AbstractProvider:
+        factory: [ '@App\YouTube\Client', 'getOauthProvider' ]
+
+    Redis:
+        class: 'Redis'
+        factory: ['Symfony\Component\Cache\Adapter\RedisAdapter', 'createConnection']
+        arguments:
+            $dsn: "redis://redis:6379"
+
+    google_auth_redis_cache:
+        class: Symfony\Component\Cache\Adapter\RedisAdapter
+        arguments:
+            $redisClient: '@Redis'
+            $namespace: 'google_oauth_tokens'
+
+    App\OAuth2\Storage\Bucket:
+        class: App\OAuth2\Storage\CacheBucket
+        arguments:
+            $adapter: '@google_auth_redis_cache'
+
+    App\OAuth2\Csrf\SessionBucket:
+        class: App\OAuth2\Csrf\SessionBucket

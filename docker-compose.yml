@@ -28,6 +28,12 @@ services:
     networks:
       - windowswap
 
+  redis:
+    container_name: windowswap_redis
+    image: redis:latest
+    networks:
+      - windowswap
+
   mysql:
     container_name: windowswap_mysql
     image: mariadb:latest
