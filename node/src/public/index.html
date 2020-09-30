@@ -5,11 +5,70 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Catena WindowSwap</title>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/build/app.css">
 </head>
 <body>
-	<h1>Hello world.</h1>
-	<iframe src="https://drive.google.com/file/d/1Huo2U7sRurAfdGw-EVs96nBhyv5aJv18/preview" width="640" height="480"></iframe>
+	<section class="home-section is-hidden">
+		<div class="content-wrapper">
+			<h1>Find your window into the world!</h1>
+			<p>Find a perfect view anywhere around the world from the comfort of your home.</p>
+			<img src="./img/window.svg" alt="">
+			<div class="buttons">
+				<button class="submit-btn btn">Submit your view</button>
+				<button class="change-btn btn">Find a new view</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="upload-section is-hidden">
+		<div class="content-wrapper">
+			<h1>Submit your window!</h1>
+			<p>Share your view with the world. Upload a 10 minute video and share it with others.</p>
+			<form class="form">
+				<label for="name">Name</label><br>
+				<input type="text" id="name" name="name">
+				<label for="location" class="location">Location</label>
+				<input type="text" id="location" name="location">
+
+				<div class="buttons">
+					<div class="file-upload">
+						<label for="files" class="submit-btn btn">Upload video</label>
+						<input type="file" name="filename" id="files">
+					</div>
+					<input type="submit" class="change-btn btn is-disabled">
+				</div>
+			</form>
+
+		</div>
+	</section>
+
+	<section class="video-section">
+		<div class="message-wrapper">
+			<div class="content-wrapper">
+				<h1>The view is best experienced when it’s landscape!</h1>
+				<img src="./img/rotate.svg" alt="">
+				<h1>Please rotate your device!</h1>
+			</div>
+		</div>
+
+		<div class="video-wrapper">
+			<div class="video-info">
+				<div class="uploader">Marko's view</div>
+				<div class="location">
+					<img src="./img/pin.svg" alt="">
+					<span>Belgrade, Serbia</span>
+				</div>
+			</div>
+			<iframe src="https://www.youtube.com/embed/zHD5kgHjKj4?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+
+			<div class="buttons">
+				<button class="submit-btn btn">Submit your view</button>
+				<button class="change-btn btn">Find a new view</button>
+			</div>
+		</div>
+	</section>
+
 	<script src="/build/app.js"></script>
 </body>
 </html>
