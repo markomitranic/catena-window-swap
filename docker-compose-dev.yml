@@ -8,8 +8,6 @@ services:
     volumes:
       - ./node/src/public:/app/src/public:delegated
       - node_build:/app/src/public/build
-    depends_on:
-      - node
 
   node:
     container_name: windowswap_node
@@ -29,11 +27,16 @@ services:
       target: dev
       args:
         - XDEBUG_ACTIVE=${XDEBUG_ACTIVE}
+    environment:
+      SITE_URL: 'http://localhost:8080'
     volumes:
       - ./server/src:/app/src:delegated
+      - server_uploads:/app/src/public/uploads
       - server_vendor:/app/src/vendor
+      - /app/src/var
 
 volumes:
   node_vendors:
   node_build:
   server_vendor:
+  server_uploads:

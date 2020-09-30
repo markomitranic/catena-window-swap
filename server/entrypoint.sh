@@ -10,4 +10,6 @@ while ! mysqladmin ping --host=${MYSQL_HOST} --user=${MYSQL_USERNAME} --password
 	sleep 3
 done
 
+bin/console doctrine:migrations:migrate
+
 exec "$@"
