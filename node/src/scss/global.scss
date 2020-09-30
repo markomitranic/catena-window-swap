@@ -224,6 +224,43 @@
 		display: none;
 	}
 
+	.message-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+		padding: 0 30px;
+		background: #EAE2B7;
+		height: 100%;
+
+		@media only screen and (min-width: 640px) {
+			display: none;
+		}
+
+		.content-wrapper {
+			padding: 0 20px;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			height: 350px;
+
+			h1 {
+				margin: 0;
+			}
+
+			img {
+				transform-origin: center;
+				animation-name: rotate;
+				animation-duration: 6s;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-in-out;
+			}
+		}
+	}
+
 	.video-wrapper {
 		display: none;
 
