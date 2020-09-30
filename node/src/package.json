@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "webpack --mode=development",
 		"production": "webpack --mode=production",
-	  	"start": "NODE_TLS_REJECT_UNAUTHORIZED=0 webpack-dev-server --mode development --host 0.0.0.0 --hot --open --useLocalIp"
+		"start": "NODE_TLS_REJECT_UNAUTHORIZED=0 webpack-dev-server --mode development --host 0.0.0.0 --hot --open --useLocalIp"
 	},
 	"keywords": [],
 	"author": "",

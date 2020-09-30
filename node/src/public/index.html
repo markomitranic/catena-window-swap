@@ -9,14 +9,14 @@
 	<link rel="stylesheet" href="/build/app.css">
 </head>
 <body>
-	<section class="home-section is-hidden">
+	<section class="home-section">
 		<div class="content-wrapper">
 			<h1>Find your window into the world!</h1>
 			<p>Find a perfect view anywhere around the world from the comfort of your home.</p>
 			<img src="./img/window.svg" alt="">
 			<div class="buttons">
-				<button class="submit-btn btn">Submit your view</button>
-				<button class="change-btn btn">Find a new view</button>
+				<button class="submit-btn btn submit">Submit your view</button>
+				<button class="change-btn btn video">Find a new view</button>
 			</div>
 		</div>
 	</section>
@@ -43,7 +43,7 @@
 		</div>
 	</section>
 
-	<section class="video-section">
+	<section class="video-section is-hidden">
 		<div class="message-wrapper">
 			<div class="content-wrapper">
 				<h1>The view is best experienced when it’s landscape!</h1>
@@ -52,7 +52,7 @@
 			</div>
 		</div>
 
-		<div class="video-wrapper">
+		<div class="video-wrapper is-hidden">
 			<div class="video-info">
 				<div class="uploader">Marko's view</div>
 				<div class="location">
@@ -60,11 +60,10 @@
 					<span>Belgrade, Serbia</span>
 				</div>
 			</div>
-			<iframe src="https://www.youtube.com/embed/zHD5kgHjKj4?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
-
+			<div id="iframe-wrapper"></div>
 			<div class="buttons">
-				<button class="submit-btn btn">Submit your view</button>
-				<button class="change-btn btn">Find a new view</button>
+				<button class="submit-btn btn submit">Submit your view</button>
+				<button class="change-btn btn" id="next-video-button">Find a new view</button>
 			</div>
 		</div>
 	</section>
