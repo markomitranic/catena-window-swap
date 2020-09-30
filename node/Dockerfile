@@ -10,4 +10,4 @@ CMD ["yarn", "start"]
 
 FROM base AS prod
 COPY ./src/ /app/src/
-RUN yarn install && yarn build
+RUN yarn install && yarn production
