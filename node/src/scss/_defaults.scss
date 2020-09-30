@@ -1,0 +1,61 @@
+html, body, section {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+h1 {
+	font-family: 'Merriweather', serif;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 120%;
+	text-align: center;
+	color: #114B5F;
+	margin-bottom: 20px;
+
+	@media screen and (min-width: 620px) {
+		font-size: 34px;
+	}
+}
+
+p {
+	font-family: 'Merriweather Sans', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	color: #114B5F;
+}
+
+.content-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 800px;
+	background: #EAE2B7;
+	border-radius: 10px;
+	padding: 30px;
+
+	@media screen and (min-width: 620px) {
+		padding: 60px;
+		box-shadow: 0 80px 110px -40px rgb(7, 48, 62), 0 5px 20px rgb(58, 88, 98);
+	}
+}
+
+.btn {
+	font-family: 'Merriweather', serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 15px;
+	text-align: center;
+	border: none;
+	padding: 15px 30px;
+	border-radius: 30px;
+	transition: .3s ease-in-out;
+	cursor: pointer;
+
+	&:focus {
+		border: none;
+		outline: none;
+	}
+}
