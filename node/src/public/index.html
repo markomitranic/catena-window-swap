@@ -27,16 +27,16 @@
 			<p>Share your view with the world. Upload a 10 minute video and share it with others.</p>
 			<form class="form">
 				<label for="name">Name</label><br>
-				<input type="text" id="name" name="name">
+				<input type="text" id="name" name="name" required>
 				<label for="location" class="location">Location</label>
-				<input type="text" id="location" name="location">
+				<input type="text" id="location" name="location" required>
 
 				<div class="buttons">
 					<div class="file-upload">
-						<label for="files" class="submit-btn btn">Upload video</label>
-						<input type="file" name="filename" id="files">
+						<label for="video" class="submit-btn btn">Upload video</label>
+						<input type="file" name="video" id="video" required>
 					</div>
-					<input type="submit" class="change-btn btn is-disabled">
+					<input type="submit" class="change-btn btn">
 				</div>
 			</form>
 
@@ -67,6 +67,10 @@
 			</div>
 		</div>
 	</section>
+
+	<div id="error-popup">
+		<ul id="error-popup-wrapper"></ul>
+	</div>
 
 	<script src="/build/app.js?v=4"></script>
 </body>

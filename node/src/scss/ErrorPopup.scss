@@ -1,0 +1,33 @@
+#error-popup {
+  bottom: 20px;
+  position: fixed;
+  left: 20px;
+  width: 90%;
+  max-width: 320px;
+  margin: 0 auto;
+  list-style-type: none;
+  max-height: calc(90vh - 40px);
+  padding: 5px;
+
+
+  li {
+	background: #eae2b7;
+	padding: 5px 10px;
+	border-radius: 2px;
+	box-shadow: 0 0 3px 0px #00000059;
+	position: relative;
+	margin: 10px auto;
+
+	button {
+	  position: absolute;
+	  right: 5px;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  background: transparent;
+	  border: 1px solid #114b5f;
+	  border-radius: 2px;
+	  cursor: pointer;
+	}
+  }
+
+}
