@@ -67,6 +67,8 @@ ssh-add ~/.ssh/id_rsa
 # set up webhooks
 apt-get install webhook
 cp /root/windowswap/catena-window-swap/hooks/webhook.service /etc/systemd/system/webhook.service
+
 systemctl enable webhook.service
+systemctl start webhook.service
 
 ```
