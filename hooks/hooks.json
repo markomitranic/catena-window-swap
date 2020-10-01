@@ -1,0 +1,7 @@
+[
+  {
+	"id": "redeploy-webhook",
+	"execute-command": "./redeploy.sh &> ./redeploy.log",
+	"command-working-directory": "../"
+  }
+]

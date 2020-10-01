@@ -58,4 +58,15 @@ ufw allow ssh
 ufw allow 80
 ufw allow 443
 ufw enable
+
+# Make a deploy key
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+
+# set up webhooks
+apt-get install webhook
+cp /root/windowswap/catena-window-swap/hooks/webhook.service /etc/systemd/system/webhook.service
+systemctl enable webhook.service
+
 ```
