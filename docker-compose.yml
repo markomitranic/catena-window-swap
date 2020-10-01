@@ -27,7 +27,7 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       SITE_URL: 'https://windowswap.catena.media'
     volumes:
-      - ${UPLOADS_DIR}:/app/src/public/uploads
+      - ${UPLOADS_DIR}:/app/src/public/api/uploads
     restart: always
     depends_on:
       - mysql

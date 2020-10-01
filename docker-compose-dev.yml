@@ -31,7 +31,7 @@ services:
       SITE_URL: 'http://localhost:80'
     volumes:
       - ./server/src:/app/src:delegated
-      - server_uploads:/app/src/public/uploads
+      - server_uploads:/app/src/public/api/uploads
       - server_vendor:/app/src/vendor
       - /app/src/var
 
