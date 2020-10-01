@@ -24,7 +24,7 @@ class SubmitVideo extends AbstractController
 				$request->get('location'),
 				$request->files->get('video')
 			);
-		} catch (\Exception $e) {
+		} catch (\Throwable $e) {
 			return new JsonResponse(['success' => false, 'error' => $e->getMessage()], 400);
 		}
 
