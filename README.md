@@ -14,9 +14,9 @@ In essence, its even easier. No certs, no uploads. Just run `./deploy_dev.sh`.
 
 
 # API Docs
-- **[GET]** /api/videos/random - Returns a random (confirmed) video from the DB. 
-- **[GET]** /api/videos/submit - Displays a list of videos that are pending confirmation.
-- **[POST]** /api/videos/submit - Attempt to submit a video for confirmation. Params: `name`, `location`, `video`
+- **[GET]** /api/video/random - Returns a random (confirmed) video from the DB. 
+- **[GET]** /api/video/submit - Displays a list of videos that are pending confirmation.
+- **[POST]** /api/video/submit - Attempt to submit a video for confirmation. Params: `name`, `location`, `video`
 
 # Future prospects
 
