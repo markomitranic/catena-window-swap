@@ -17,17 +17,10 @@
 		}
 
 		img {
-			width: 180px;
+		  width: 90%;
+		  max-width: 400px;
 			margin: 30px 0 40px 0;
 
-			@media screen and (min-width: 520px) {
-				width: 210px;
-				margin: 40px 0 60px 0;
-			}
-
-			@media screen and (min-width: 620px) {
-				width: 230px;
-			}
 		}
 
 		.buttons {
@@ -40,30 +33,30 @@
 			}
 
 			.btn {
+			  margin: 20px 0 0 0;
+			  background: #EAE2B7;
+			  border: 3px solid #114B5F;
+			  color: #114B5F;
+
+			  @media screen and (min-width: 520px) {
+				margin: 0 0 0 20px;
+			  }
+
+			  &:hover {
+				border-color: #858068;
+				color: #858068;
+			  }
+
+			  &:last-child {
 				background: #114B5F;
 				color: #EAE2B7;
 				display: block;
 				width: 100%;
 
 				&:hover {
-					background: lighten(#114B5F, 5%);
+				  background: lighten(#114B5F, 5%);
 				}
-
-				&:last-child {
-					margin: 20px 0 0 0;
-					background: #EAE2B7;
-					border: 3px solid #114B5F;
-					color: #114B5F;
-
-					@media screen and (min-width: 520px) {
-						margin: 0 0 0 20px;
-					}
-
-					&:hover {
-						border-color: #858068;
-						color: #858068;
-					}
-				}
+			  }
 			}
 		}
 	}
@@ -96,6 +89,26 @@
 				max-width: 70%;
 			}
 		}
+
+	  #upload-guide {
+		margin-top: 20px;
+
+		ul {
+		  li {
+			display: block;
+			margin: 15px;
+
+			p {
+			  margin: 0 auto;
+
+			  img {
+				display: block;
+				margin: 20px auto;
+			  }
+			}
+		  }
+		}
+	  }
 
 		.form {
 			margin: 30px 0 0 0;
