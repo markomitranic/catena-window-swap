@@ -1,7 +1,0 @@
-[
-  {
-	"id": "redeploy-webhook",
-	"execute-command": "/root/windowswap/catena-window-swap/hooks/redeploy.sh",
-	"command-working-directory": "/root/windowswap/catena-window-swap/"
-  }
-]

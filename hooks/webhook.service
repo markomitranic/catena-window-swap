@@ -1,8 +1,0 @@
-[Unit]
-Description=Webhooks
-
-[Service]
-ExecStart=webhook -hooks /root/windowswap/catena-window-swap/hooks/hooks.json -verbose -secure -cert /root/windowswap/certs/cert.cer -key /root/windowswap/certs/cert.key -ip 165.227.130.251 -hotreload &> /root/windowswap/catena-window-swap/hooks/hooks.log
-
-[Install]
-WantedBy=multi-user.target

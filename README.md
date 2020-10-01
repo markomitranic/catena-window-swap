@@ -63,10 +63,4 @@ ufw enable
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
-
-# set up webhooks (still not working)
-apt-get install webhook
-cp /root/windowswap/catena-window-swap/hooks/webhook.service /etc/systemd/system/webhook.service
-systemctl enable webhook.service
-systemctl start webhook.service
 ```
