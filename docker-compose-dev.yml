@@ -28,7 +28,7 @@ services:
       args:
         - XDEBUG_ACTIVE=${XDEBUG_ACTIVE}
     environment:
-      SITE_URL: 'http://localhost:8080'
+      SITE_URL: 'http://localhost:80'
     volumes:
       - ./server/src:/app/src:delegated
       - server_uploads:/app/src/public/uploads

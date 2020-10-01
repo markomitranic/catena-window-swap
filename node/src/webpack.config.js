@@ -70,6 +70,7 @@ module.exports = {
 	},
 	devServer: {
 		inline: true,
+		port: 80,
 		historyApiFallback: true,
 		host: 'localhost',
 		disableHostCheck: true,
