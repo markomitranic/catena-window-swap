@@ -31,13 +31,13 @@
 
 			<div id="upload-guide">
 				<ul>
-					<li><p>Step 1: Take your phone and point it toward the window</p></li>
+					<li><p>Step 1: Go to your phone's Camera App and point it toward the window.</p></li>
 					<li><p>Step 2: It is totally fine if your work area is visible.</p></li>
 					<li><p>Step 3: Don't worry if the table is all messy or someone is listening to Guns 'n Roses in the other room. That's all part of your unique worldview!</p></li>
 					<li><p>Step 4: Upload it! <img src="./img/window.svg" alt=""></p></li>
 				</ul>
 			</div>
-			
+
 			<form class="form">
 				<label for="name">Name</label><br>
 				<input type="text" id="name" name="name" required>
@@ -47,7 +47,7 @@
 				<div class="buttons">
 					<div class="file-upload">
 						<label for="video" class="submit-btn btn">Upload video</label>
-						<input type="file" name="video" id="video" required>
+						<input type="file" name="video" id="video" required  accept="video/*" capture="environment">
 					</div>
 					<input type="submit" class="change-btn btn">
 				</div>
