@@ -240,6 +240,18 @@
 				position: relative;
 				width: 100%;
 
+			  	&.contains-files {
+				  label {
+					background-color: #9bbd9c;
+
+					&:before {
+					  display: inline;
+					  content: '✅';
+					  margin-right: 5px;
+					}
+				  }
+				}
+
 				label {
 				  	width: 100%;
 					margin: 0;
@@ -260,6 +272,14 @@
 					padding: 0;
 					margin: 0;
 					visibility: hidden;
+
+
+				  position: absolute;
+				  z-index: -1;
+				  top: 6px;
+				  left: 0;
+				  font-size: 15px;
+				  color: rgb(153,153,153);
 				}
 			}
 		  	.submit-button {

@@ -11,7 +11,15 @@ class SubmitPanel {
 		this.form = this.uploadSectionWrapper.querySelector('form.form');
 		this.submitLoaderWrapper = this.form.querySelector('.submit-button');
 		this.form.addEventListener('submit', event => this.submit(event));
-		// this.videoField = this.form.querySelector('#video');
+		this.videoFieldWrapper = this.form.querySelector('.file-upload');
+		this.videoField = this.videoFieldWrapper.querySelector('#video');
+		this.videoField.addEventListener('change', (e) => {
+			if (this.videoField.files.length !== 0) {
+				this.videoFieldWrapper.classList.add('contains-files');
+			} else {
+				this.videoFieldWrapper.classList.remove('contains-files');
+			}
+		});
 	}
 
 	submit(event) {
