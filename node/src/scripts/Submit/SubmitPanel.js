@@ -1,5 +1,6 @@
 "use strict";
 
+
 class SubmitPanel {
 
 	constructor(errorPopup, adapter, uploadSectionWrapper, successCallback) {
@@ -8,15 +9,15 @@ class SubmitPanel {
 		this.uploadSectionWrapper = uploadSectionWrapper;
 		this.successCallback = successCallback;
 		this.form = this.uploadSectionWrapper.querySelector('form.form');
+		this.submitLoaderWrapper = this.form.querySelector('.submit-button');
 		this.form.addEventListener('submit', event => this.submit(event));
-		this.nameField = this.form.querySelector('input#name');
-		this.locationField = this.form.querySelector('input#location');
-		this.videoField = this.form.querySelector('input#video');
+		// this.videoField = this.form.querySelector('#video');
 	}
 
 	submit(event) {
 		event.preventDefault();
 		const formData = new FormData(this.form);
+		this.submitLoaderWrapper.classList.add('is-disabled');
 
 		this.adapter.submit(
 			formData.get('name'),
@@ -33,11 +34,13 @@ class SubmitPanel {
 	}
 
 	success() {
+		this.submitLoaderWrapper.classList.remove('is-disabled');
 		this.errorPopup.add('Your video is safe and sound. Pending approval.');
 		this.successCallback();
 	}
 
 	error(error) {
+		this.submitLoaderWrapper.classList.remove('is-disabled');
 		console.error(error);
 		this.errorPopup.add(error);
 	}
