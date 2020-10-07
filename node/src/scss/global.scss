@@ -185,17 +185,24 @@
 	  #upload-guide {
 		margin-top: 20px;
 
+		img {
+		  display: block;
+		  margin: 20px auto;
+		}
+
 		ul {
+		  list-style-type: none;
+
 		  li {
 			display: block;
-			margin: 15px;
+			margin: 25px 10px;
 
 			p {
 			  margin: 0 auto;
+			  text-align: left;
 
-			  img {
-				display: block;
-				margin: 20px auto;
+			  strong {
+				font-weight: 1000;
 			  }
 			}
 		  }
