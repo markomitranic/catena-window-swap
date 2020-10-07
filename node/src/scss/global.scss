@@ -10,17 +10,79 @@
 	}
 
 	.content-wrapper {
-		p {
-			display: block;
-			text-align: center;
-			max-width: 80%;
+	  	position: relative;
+	  	box-sizing: border-box;
+	  	padding: 110px 30px 30px 30px;
+		max-width: 980px;
+		width: 100%;
+
+		@media screen and (max-width: 520px) {
+		  padding: 30px 20px;
 		}
 
-		img {
+	  	.catena-logo {
 		  width: 90%;
 		  max-width: 400px;
-			margin: 30px 0 40px 0;
+		  margin: 0 0 40px 0;
 
+		  @media screen and (min-width: 520px) {
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			margin: 0;
+			max-width: 220px;
+		  }
+		}
+
+		h1 {
+		  @media screen and (min-width: 520px) {
+			position: absolute;
+			top: 33px;
+			right: 30px;
+			margin: 0;
+		  }
+		}
+
+
+	  	.main-description {
+		  display: flex;
+		  justify-content: space-evenly;
+		  align-items: center;
+		  margin: 0 auto 30px auto;
+		  width: 100%;
+
+		  @media (max-width: 800px) {
+			display: block;
+		  }
+
+		  .description {
+			max-width: 340px;
+			width: 100%;
+
+			@media (max-width: 800px) {
+			  margin: 0 auto 20px auto;
+			}
+
+			p {
+			  display: block;
+			  text-align: center;
+			  margin: 0 auto;
+			}
+		  }
+		  .welcome-window {
+			margin-left: 30px;
+
+			@media (max-width: 800px) {
+			  margin: 0 auto;
+			}
+
+			img {
+			  display: block;
+			  width: 100%;
+			  max-width: 440px;
+			  margin: 0 auto;
+			}
+		  }
 		}
 
 		.buttons {
@@ -33,28 +95,40 @@
 			}
 
 			.btn {
-			  margin: 20px 0 0 0;
+			  margin: 0;
 			  background: #EAE2B7;
 			  border: 3px solid #114B5F;
 			  color: #114B5F;
-
-			  @media screen and (min-width: 520px) {
-				margin: 0 0 0 20px;
-			  }
+			  border-radius: 10px;
 
 			  &:hover {
 				border-color: #858068;
 				color: #858068;
 			  }
 
-			  &:last-child {
+			  &.submit {
+				max-width: 340px;
+				width: 100%;
+
+				@media (max-width: 520px) {
+				  margin: 20px auto 0 auto;
+				}
+
+			  }
+
+			  &.video {
 				background: #114B5F;
 				color: #EAE2B7;
 				display: block;
 				width: 100%;
+				margin: 0 0 0 20px;
 
 				&:hover {
 				  background: lighten(#114B5F, 5%);
+				}
+
+				@media (max-width: 520px) {
+				  margin: 20px auto 0 auto;
 				}
 			  }
 			}
@@ -136,7 +210,7 @@
 				box-sizing: border-box;
 				background: #F7F3E2;
 				border: none;
-				border-radius: 50px;
+				border-radius: 10px;
 				display: block;
 				padding: 18px 20px;
 				font-size: 16px;
@@ -322,8 +396,14 @@
 
 		.video-info {
 			position: absolute;
-			top: 40px;
-			left: 60px;
+			background: #114b5f;
+			box-sizing: border-box;
+			padding: 20px 40px;
+			width: 520px;
+			max-width: 90%;
+			border-radius: 0 0 10px 0;
+			top: 0;
+			left: 0;
 			z-index: 2;
 
 			.uploader {

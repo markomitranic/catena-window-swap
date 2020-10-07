@@ -1,6 +1,7 @@
 html, body, section {
 	width: 100%;
 	height: auto;
+  	min-height: 100vh;
 	box-sizing: border-box;
 }
 
@@ -49,7 +50,7 @@ p {
 	text-align: center;
 	border: none;
 	padding: 15px 30px;
-	border-radius: 30px;
+	border-radius: 10px;
 	transition: .3s ease-in-out;
 	cursor: pointer;
 
