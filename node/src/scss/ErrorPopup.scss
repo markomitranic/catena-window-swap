@@ -1,33 +1,48 @@
 #error-popup {
-  bottom: 20px;
+  top: 50%;
   position: fixed;
-  left: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 90%;
   max-width: 320px;
   margin: 0 auto;
   list-style-type: none;
   max-height: calc(90vh - 40px);
   padding: 5px;
-
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #114B5F;
 
   li {
-	background: #eae2b7;
-	padding: 5px 10px;
-	border-radius: 2px;
-	box-shadow: 0 0 3px 0px #00000059;
+	background: rgba(#EAE2B7, 0.93);
+	padding: 15px 25px;
+	border-radius: 10px;
+	box-shadow: 0 0 4px 0 #00000047;
 	position: relative;
 	margin: 10px auto;
+	border: 1px solid #f9f5e1;
 
-	button {
-	  position: absolute;
-	  right: 5px;
-	  top: 50%;
-	  transform: translateY(-50%);
-	  background: transparent;
-	  border: 1px solid #114b5f;
-	  border-radius: 2px;
-	  cursor: pointer;
+	div.alert {
+	  strong {
+		font-weight: 1000;
+		margin: 0 auto 14px 0;
+		display: block;
+	  }
+
+	  button {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		background: transparent;
+		border: 1px solid #114b5f;
+		color: #114B5F;
+		border-radius: 2px;
+		cursor: pointer;
+	  }
+
 	}
+
   }
 
 }

@@ -17,7 +17,7 @@ class ErrorPopup {
 	getTemplate(message, level) {
 		const wrapper = document.createElement('li');
 		wrapper.innerHTML = `<div class="alert" role="alert">
-			<strong>Holy guacamole!</strong> <br> ${message}
+			<strong>Holy guacamole!</strong>${message}
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>

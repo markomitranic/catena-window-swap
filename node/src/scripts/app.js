@@ -27,6 +27,10 @@ const submitPanel = new SubmitPanel(
 	() => panelManager.showPanel('home')
 );
 
+document.getElementById('back-button').addEventListener('click', () => {
+	panelManager.showPanel('home');
+});
+
 document.querySelector('.home-section .buttons .submit').addEventListener('click', () => {
 	panelManager.showPanel('submit');
 });
