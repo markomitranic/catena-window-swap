@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Submission\Request;
 
 use Exception;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\Length;
@@ -32,8 +33,12 @@ class Validator
 		"video/x-ms-wmv",
 	];
 
-	public function validate(string $name, string $location, UploadedFile $video): SubmissionDTO
+	public function validate(Request $request): SubmissionDTO
 	{
+		$name = $request->get('name');
+		$location = $request->get('location');
+		$video = $request->files->get('video');
+
 		$validator = Validation::createValidator();
 
 		$violations = $validator->validate(

@@ -19,11 +19,7 @@ class SubmitVideo extends AbstractController
 		Request $request
 	): Response {
 		try {
-			$submissionDto = $validator->validate(
-				$request->get('name'),
-				$request->get('location'),
-				$request->files->get('video')
-			);
+			$submissionDto = $validator->validate($request);
 		} catch (\Throwable $e) {
 			return new JsonResponse(['success' => false, 'error' => $e->getMessage()], 400);
 		}
